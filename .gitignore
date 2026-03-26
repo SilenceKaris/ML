@@ -205,3 +205,24 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# 敏感数据文件（永远不要上传）
+*.csv
+*.xlsx
+*.xls
+*.tsv
+*.json
+data/
+dataset/
+patients/
+clinical_data/
+
+# 模型训练缓存
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.DS_Store
+
+# 环境文件（包含密钥）
+.env
+config.ini
