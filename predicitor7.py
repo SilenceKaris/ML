@@ -17,7 +17,6 @@ SHAP_LABELS = ['ALP', 'Stages', 'ALBI', 'GGT', 'C3', 'D_D', 'DBIL']
 # ==================== 页面配置 ====================
 st.set_page_config(page_title="UDCA应答不佳预测", layout="wide")
 st.title("UDCA应答不佳风险预测")
-
 # ==================== 加载模型 ====================
 @st.cache_resource
 def load_model():
@@ -90,6 +89,12 @@ inputs = {
     'DBIL': dbil
 }
 
+with st.expander("ℹ️ 隐私与使用说明"):
+    st.markdown("""
+- 输入数据仅用于实时预测，不存储，关闭页面后清除
+- 演示数据为模拟值，不涉及真实患者信息  
+- 本工具仅供论文演示，不作为诊断依据
+""")
 # ==================== 预测 ====================
 st.divider()
 if st.button("🔍 预测", type="primary"):
